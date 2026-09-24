@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cờ Tướng - tải APK</title>
+<meta name="description" content="App Android nhận diện nước đi cờ tướng từ video, phát lại ván cờ và xuất video MP4.">
+<link rel="icon" href="logo.png">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 24px 16px; color: #222; background: #fff; }
+  main { max-width: 520px; margin: 0 auto; }
+  img { width: 96px; height: 96px; border-radius: 24%; display: block; }
+  h1 { font-size: 1.5rem; margin: 12px 0 4px; }
+  p { margin: 0 0 8px; line-height: 1.5; }
+  a.btn { display: block; text-align: center; background: #b3261e; color: #fff; text-decoration: none; font-size: 1.1rem; padding: 14px; border-radius: 8px; margin: 16px 0 6px; }
+  .meta { font-size: .9rem; color: #666; }
+  ol { padding-left: 20px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<main>
+  <img src="logo.png" alt="Cờ Tướng">
+  <h1>Cờ Tướng</h1>
+  <p>Nhận diện nước đi cờ tướng từ video, phát lại ván cờ và xuất video MP4. Xử lý hoàn toàn trên điện thoại.</p>
+  <a class="btn" href="co-tuong.apk" download>Tải APK</a>
+  <div class="meta">Phiên bản 0.1 · Android 8.0 trở lên<span id="size"></span></div>
+
+  <h3>Cài đặt</h3>
+  <ol>
+    <li>Tải xong, mở file APK. Nếu Android hỏi, cho phép cài ứng dụng từ trình duyệt.</li>
+    <li>Nếu Play Protect chặn: bấm <b>Chi tiết khác</b> → <b>Vẫn cài đặt</b>.</li>
+  </ol>
+
+  <h3>Sử dụng</h3>
+  <ol>
+    <li>Dán link YouTube hoặc chọn video trong máy, bấm <b>Tải</b>.</li>
+    <li>Kéo 4 chấm đỏ vào 4 góc ngoài cùng của lưới bàn cờ.</li>
+    <li>Bấm <b>Chạy nhận diện</b> và chờ.</li>
+    <li>Xem lại ván cờ, biên bản theo ký pháp WXF, chỉnh tốc độ phát.</li>
+    <li>Bấm <b>Tải video MP4</b> để lưu video vào thư mục Movies/CoTuong.</li>
+  </ol>
+
+  <h3>Giới hạn</h3>
+  <ol>
+    <li>Bản thử nghiệm: video bàn cờ thật hoặc bị tay che lâu có thể nhận sai nước đi.</li>
+    <li>Bàn nghiêng nhiều hoặc khuất góc thì cần kéo 4 góc thật kỹ.</li>
+  </ol>
+</main>
+<script>
+  // Show APK size from the HEAD response
+  fetch('co-tuong.apk', { method: 'HEAD' }).then(r => {
+    const n = parseInt(r.headers.get('content-length') || '0', 10);
+    if (n) document.getElementById('size').textContent = ` · ${(n / 1048576).toFixed(1)} MB`;
+  }).catch(() => {});
+</script>
+</body>
+</html>
